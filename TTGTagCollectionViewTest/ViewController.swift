@@ -12,13 +12,21 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tagView: TTGTextTagCollectionView!
     
+    @IBOutlet weak var layoutConstraintTagViewH: NSLayoutConstraint!
+    private var tagViewH: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tagViewH = layoutConstraintTagViewH.constant
         loadTagView(tagView: tagView)
     }
     
     private func loadTagView(tagView: TTGTextTagCollectionView){
+        addTags(tagView: tagView)
+    }
+    
+    private func addTags(tagView: TTGTextTagCollectionView){
         let fontSize: CGFloat = 20
         let extraSpace = CGSize.init(width: 8, height: 8)
         
@@ -107,6 +115,19 @@ class ViewController: UIViewController {
         tag.selectedStyle = selectedStyle
         
         return tag
+    }
+}
+
+//Action
+extension ViewController{
+    @IBAction func btnAddTouchUpInside(_ sender: UIButton) {
+        layoutConstraintTagViewH.constant = tagViewH
+        addTags(tagView: tagView)
+    }
+    
+    @IBAction func btnRemoveTouchUpInside(_ sender: UIButton) {
+        tagView.removeAllTags()
+        layoutConstraintTagViewH.constant = 0
     }
 }
 

@@ -23,16 +23,53 @@
                                     <constraint firstAttribute="height" constant="36" id="CJX-lG-Bde"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-GH-BWc" userLabel="btnRemove">
+                                <rect key="frame" x="20" y="831" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="GXg-88-4pe"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Remove"/>
+                                <connections>
+                                    <action selector="btnRemoveTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEA-ga-COs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRL-mI-gy0" userLabel="btnAdd">
+                                <rect key="frame" x="20" y="792" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="yG7-zU-AVc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                <connections>
+                                    <action selector="btnAddTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DxI-aE-m9T"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pef-Xv-5p5" userLabel="vwMiddle">
+                                <rect key="frame" x="20" y="88" width="374" height="696"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MRL-mI-gy0" secondAttribute="trailing" constant="20" id="6Xv-tp-vhe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Ry-GH-BWc" secondAttribute="trailing" constant="20" id="JWl-Wq-xee"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pef-Xv-5p5" secondAttribute="trailing" constant="20" id="JlE-z7-OWx"/>
+                            <constraint firstItem="5Ry-GH-BWc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RG0-HL-wRT"/>
+                            <constraint firstItem="Pef-Xv-5p5" firstAttribute="top" secondItem="wWB-ey-p2d" secondAttribute="bottom" constant="8" symbolic="YES" id="T1a-gv-kGb"/>
+                            <constraint firstItem="5Ry-GH-BWc" firstAttribute="top" secondItem="MRL-mI-gy0" secondAttribute="bottom" constant="8" symbolic="YES" id="VHK-kS-eqL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wWB-ey-p2d" secondAttribute="trailing" constant="20" id="fK2-Hj-MX7"/>
+                            <constraint firstItem="MRL-mI-gy0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fb9-gV-0ae"/>
                             <constraint firstItem="wWB-ey-p2d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ka1-WC-mJI"/>
+                            <constraint firstItem="MRL-mI-gy0" firstAttribute="top" secondItem="Pef-Xv-5p5" secondAttribute="bottom" constant="8" symbolic="YES" id="lLX-Z6-FLM"/>
+                            <constraint firstItem="5Ry-GH-BWc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qjJ-1o-Yb0"/>
+                            <constraint firstItem="Pef-Xv-5p5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="swW-AV-NGR"/>
                             <constraint firstItem="wWB-ey-p2d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tUt-Vb-WgP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="layoutConstraintTagViewH" destination="CJX-lG-Bde" id="RLi-Nk-43X"/>
                         <outlet property="tagView" destination="wWB-ey-p2d" id="Trr-2b-1WY"/>
                     </connections>
                 </viewController>
