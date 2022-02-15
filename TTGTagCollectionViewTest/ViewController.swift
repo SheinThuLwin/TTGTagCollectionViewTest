@@ -136,6 +136,7 @@ extension ViewController: TTGTextTagCollectionViewDelegate{
         guard index != 0 else{
             return
         }
+        
         let selectedTags = tagView.allSelectedTags()
         let count = selectedTags?.count ?? 0
         print("Tag Tap Index>> \(index)")
@@ -148,6 +149,30 @@ extension ViewController: TTGTextTagCollectionViewDelegate{
                 }
             }
             print("Selected \(count) tag(s) >> \(selectedInfo)")
+            print("Selected index >> \(tagView.getSelectedIndices(skipTitle: true))")
         }
+    }
+}
+
+extension TTGTextTagCollectionView {
+    func getSelectedIndices(skipTitle: Bool = false) -> [Int]{
+        var selectedIndices:[Int] = []
+        var index: Int = 0
+        if let allTags = self.allTags(){
+            for tag in allTags {
+                if skipTitle{
+                    if index > 0 && tag.selected{
+                        selectedIndices.append(index-1)
+                    }
+                }else{
+                    if tag.selected{
+                        selectedIndices.append(index)
+                    }
+                }
+                
+                index += 1
+            }
+        }
+        return selectedIndices
     }
 }
